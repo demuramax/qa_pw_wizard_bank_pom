@@ -40,8 +40,4 @@ export class OpenAccountPage {
     await this.customersButton.click();
   }
 
-  async assertLastRowAccountNumberNotEmpty() {
-    await expect(this.lastRowAccountNumber).not.toBeEmpty();
-  }
-
 }

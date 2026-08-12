@@ -47,6 +47,10 @@ export class CustomersListPage {
   async assertTableRowsCount(expectedCount) {
     await expect(this.tableRows).toHaveCount(expectedCount);
   }
+
+  async assertLastRowAccountNumberNotEmpty() {
+  await expect(this.lastRowAccountNumber).not.toBeEmpty();
+ }
 }
 
 
