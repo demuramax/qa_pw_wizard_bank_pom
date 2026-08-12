@@ -24,8 +24,7 @@ export class OpenAccountPage {
   }
 
   async assertCurrencyOptionSelected(currency) {
-    const selectedOption = await this.page.getByTestId('currency').inputValue();
-    expect(selectedOption).toBe(currency);
+    await expect(this.page.getByTestId('currency')).toHaveValue(currency);
   }
 
   async clickProcessButton() {
