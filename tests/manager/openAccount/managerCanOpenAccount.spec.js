@@ -57,6 +57,4 @@ test('Assert manager can add new customer', async ({ page }) => {
     await openAccountPage.reloadPage(); 
     await addCustomerPage.clickCustomersButton();
     await openAccountPage.assertLastRowAccountNumberNotEmpty();
-
-
 });
