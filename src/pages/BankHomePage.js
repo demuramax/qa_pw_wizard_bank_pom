@@ -7,17 +7,15 @@ export class BankHomePage {
       name: 'Customer Login',
     });
     this.managerLoginButton = page.getByRole('button', {
-      name: 'Bank Manager Login' }); 
+      name: 'Bank Manager Login'
+    });
   }
-
   async open() {
     await this.page.goto('/angularJs-protractor/BankingProject/#/login');
   }
-
   async clickCustomerLoginButton() {
     await this.customerLoginButton.click();
   }
-
   async clickManagerLoginButton() {
     await this.managerLoginButton.click();
   }

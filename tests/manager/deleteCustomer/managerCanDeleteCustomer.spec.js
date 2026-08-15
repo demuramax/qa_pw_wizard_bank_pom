@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   customersListPage = new CustomersListPage(page);
   firstName = faker.person.firstName();
   lastName = faker.person.lastName();
-  postCode = faker.location.zipCode(); 
+  postCode = faker.location.zipCode();
   /* 
   Pre-conditons:
   1. Open Add Customer page.
@@ -44,6 +44,5 @@ test('Assert manager can delete customer', async ({ page }) => {
   await customersListPage.clickDeleteButton();
   await customersListPage.assertCustomerNotInList(firstName, lastName);
   await addCustomerPage.reloadPage();
-  await customersListPage.assertCustomerNotInList(firstName, lastName); 
-
+  await customersListPage.assertCustomerNotInList(firstName, lastName);
 });

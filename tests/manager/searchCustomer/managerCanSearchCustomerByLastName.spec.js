@@ -1,8 +1,7 @@
 import { test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage.js';
-import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage.js';  
-
+import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage.js';
 
 let firstName;
 let lastName;
@@ -13,7 +12,6 @@ let customersListPage;
 test.beforeEach(async ({ page }) => {
   addCustomerPage = new AddCustomerPage(page);
   customersListPage = new CustomersListPage(page);
-
   /* 
   Pre-conditons:
   1. Open Add Customer page
@@ -41,7 +39,6 @@ test('Assert manager can search customer by Last Name', async ({ page }) => {
   3. Assert customer row is present in the table. 
   4. Assert no other rows is present in the table.
   */
-
   await customersListPage.open();
   await customersListPage.fillSearchCustomerInput(lastName);
   await customersListPage.assertLastCustomerDetails(firstName, lastName, postalCode);

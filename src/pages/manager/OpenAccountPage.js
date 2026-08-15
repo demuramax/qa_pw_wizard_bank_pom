@@ -14,29 +14,22 @@ export class OpenAccountPage {
       '/angularJs-protractor/BankingProject/#/manager/openAccount',
     );
   }
-
   async selectCurrencyOption(currency) {
     await this.page.getByTestId('currency').selectOption(currency);
   }
-
   async selectCustomerOption(customerName) {
     await this.page.getByTestId('userSelect').selectOption(customerName);
   }
-
   async assertCurrencyOptionSelected(currency) {
     await expect(this.page.getByTestId('currency')).toHaveValue(currency);
   }
-
   async clickProcessButton() {
     await this.processButton.click();
   }
-
   async reloadPage() {
     await this.page.reload();
   }
-
   async clickCustomersButton() {
     await this.customersButton.click();
   }
-
 }

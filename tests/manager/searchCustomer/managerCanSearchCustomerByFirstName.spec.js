@@ -13,7 +13,6 @@ let customersListPage;
 test.beforeEach(async ({ page }) => {
   addCustomerPage = new AddCustomerPage(page);
   customersListPage = new CustomersListPage(page);
-
   /* 
   Pre-conditons:
   1. Open Add Customer page.
@@ -41,10 +40,8 @@ test('Assert manager can search customer by First Name', async ({ page }) => {
   3. Assert customer row is present in the table. 
   4. Assert no other rows is present in the table.
   */
-
   await customersListPage.open();
   await customersListPage.fillSearchCustomerInput(firstName);
   await customersListPage.assertLastCustomerDetails(firstName, lastName, postalCode);
   await customersListPage.assertTableRowsCount(1);
-
 });

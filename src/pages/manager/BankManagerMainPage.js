@@ -11,7 +11,6 @@ export class BankManagerMainPage {
   async open() {
     await this.page.goto('/angularJs-protractor/BankingProject/#/manager');
   }
-
   async assertButtonVisible(button) {
     await expect(button).toBeVisible();
   }
